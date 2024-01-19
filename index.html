@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="container">
+     <h2 class="text-center" id="for">To-Do List<img src="todo.jpeg"></h4>
+     <div class="mb-3 d-flex">
+      
+      <div class="inputTodo">
+        
+
+        <input type="text"   class="form-control" id="newTask" placeholder="Add your Name">
+      </div>
+
+      <div class="buttonTodo">
+        <button onclick="addTask()" class="btn btn-primary" type="submit"id="addButton">Add</button>
+      </div>
+
+      </div>
+     
+      
+     
+      
+      <div id="taskList">
+          
+          <p></p>
+          <button>Edit</button>
+          <button>Delete</button>
+      </div>
+
+
+    </header>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!-- <script>
+// document.addEventListener('DOMContentLoaded', function () {
+     
+      const addButton = document.getElementById('addButton');
+      const inputField = document.getElementById('exampleFormControlInput1');
+      const taskList = document.getElementById('taskList');
+
+     
+      addButton.addEventListener('click', function () {
+      
+        const taskName = inputField.value;
+
+        
+        const taskElement = document.createElement('div');
+        taskElement.innerHTML = `
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="taskCheckbox">
+            <label class="form-check-label" for="taskCheckbox">
+              ${taskName}
+            </label>
+          </div>
+        `;
+
+        const taskEdit = d
+
+        
+        taskList.appendChild(taskElement);
+
+
+        
+        if(inputField.value === '') {
+
+        }
+
+      });
+    });
+
+
+
+</script> -->
+
+
+  <script>
+    function addTask() {
+      // Get the input value
+      var taskText = document.getElementById('newTask').value;
+
+      // Create a new paragraph element
+      var newTaskElement = document.createElement('p');
+      newTaskElement.textContent = taskText;
+
+      // Create Edit and Delete buttons for the new task
+      var editButton = document.createElement('button');
+      editButton.textContent = 'Edit';
+      editButton.onclick = function() {
+        // Add your edit functionality here
+        alert('Edit button clicked for: ' + taskText);
+      };
+
+      var deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.onclick = function() {
+        // Add your delete functionality here
+        alert('Delete button clicked for: ' + taskText);
+        // Optionally, you can remove the task element from the DOM
+        newTaskElement.remove();
+      };
+
+      // Append the new task and buttons to the taskList div
+      document.getElementById('taskList').appendChild(newTaskElement);
+      document.getElementById('taskList').appendChild(editButton);
+      document.getElementById('taskList').appendChild(deleteButton);
+
+      // Clear the input field after adding the task
+      document.getElementById('newTask').value = '';
+    }
+  </script>
+
+
+
+  </body>
+</html>
